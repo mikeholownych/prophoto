@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: prophoto_development
+  pool: 5
+  username: prophoto
+  password: password1
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: prophoto_test
+  pool: 5
+  username: prophoto
+  password: password1
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: prophoto_production
+  pool: 5
+  username: prophoto
+  password:
