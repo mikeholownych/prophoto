@@ -8,7 +8,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
+Capybara.app_host = 'http://example.com'
+Capybara.default_host = 'http://example.com'
+
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
   config.include Rails.application.routes.url_helpers
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
@@ -26,5 +30,7 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    Apartment::Database.reset
+    drop_schemas
   end
 end
