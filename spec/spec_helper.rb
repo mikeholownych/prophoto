@@ -15,7 +15,7 @@ Capybara.default_host = 'http://lvh.com'
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include EmailSpec::Helpers
-  config.include EmialSpec::Matchers
+  config.include EmailSpec::Matchers
   config.include Rails.application.routes.url_helpers
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL

@@ -25,5 +25,5 @@ def sign_user_in(user, opts={})
 end
 
 def set_subdomain(subdomain)
-  Capybara.app_host = "http://#{subdomain}.example.com"
+  Capybara.app_host = "http://#{subdomain}.lvh.com:3000"
 end
