@@ -29,7 +29,7 @@ describe 'account creation' do
   end
 
   def sign_up(subdomain)
-    visit root_url(subdomain: false)
+    visit root_url(subdomain => false)
     click_link 'Create Account'
 
     fill_in 'Name', with: 'Mike'
