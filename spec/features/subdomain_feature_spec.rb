@@ -4,17 +4,17 @@ describe 'subdomains' do
   let!(:account) { create(:account_with_schema) }
 
   it 'redirects invalid accounts' do
-    visit "http://random-subdomain.example.com"
+    visit "http://random-subdomain.lvh.me"
     expect(page.current_url).to_not include('random-subdomain')
   end
 
   it 'allows valid accounts' do
-    visit "http://#{account.subdomain}.example.com"
+    visit "http://#{account.subdomain}.lvh.me"
     expect(page.current_url).to include(account.subdomain)
   end
 
   it 'forces user to login before accessing subdomain content' do
-    visit "http://#{account.subdomain}.example.com"
+    visit "http://#{account.subdomain}.lvh.me"
     expect(page).to have_content 'sign in or sign up before continuing.'
   end
 end
