@@ -49,7 +49,7 @@ describe 'invitations' do
       end
 
       it 'confirms account creation' do
-        expect(page).to have_content 'Your account was created successfully'
+        expect(page).to have_content 'Sign in'
       end
 
       it 'shows a checkmark on the users page' do

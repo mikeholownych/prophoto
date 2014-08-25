@@ -11,10 +11,13 @@ class SubdomainBlank
 end
 
 Prophoto::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   constraints(SubdomainPresent) do
     root 'projects#index', as: :subdomain_root
     devise_for :users
     resources :users, only: :index
+    resources :projects, except: [:show, :destroy]
   end
   
   constraints(SubdomainBlank) do
